@@ -20,22 +20,32 @@
 <!--	 onload="chatframe()"		-->
 	<body>
 	
-		<div style="display: inline-block;width: 25%; height: 480px;">
-
-		<iframe	id="friendlist" class="box"  srcdoc="<p>Hello world!</p>" style="width: 100%; height: 480px;">
-		hii
-		</iframe>
-		
+		<div id="login" style="display: inline-block; text-align: right;">
+			<label for="pnum">Phone Number</label>
+			<input type="textarea" id="pnum" style="width: 50%; height: 30px; display: inline-block;" placeholder="Type your text here......." onkeypress="Javascript: if (event.keyCode == 13) login();">
+			<br>
+			<label for="pass">Password</label>
+			<input type="textarea" id="pass" style="width: 50%; height: 30px; display: inline-block;" placeholder="Type your text here......." onkeypress="Javascript: if (event.keyCode == 13) login();">
 		</div>
-		
-		&emsp;
-		
-		<div style="width: 70%; height: 480px; display: inline-block; vertical-align: top;">
-		
-		<iframe	id="friendchat" class="box" srcdoc="" style="width: 100%; height: 440px; wordwrap: normal;""></iframe>
-		
-		<input type="textarea" id="chatbox" style="width: 100%; height: 30px; display: inline-block;" placeholder="Type your text here......." onkeypress="Javascript: if (event.keyCode == 13) sendmes();">
-		
+	
+		<div id="chatwin" style="display: none;">
+			<div style="display: inline-block; width: 25%; height: 480px;">
+
+			<iframe	id="friendlist" class="box"  srcdoc="<p>Hello world!</p>" style="width: 100%; height: 480px;">
+			hii
+			</iframe>
+			
+			</div>
+			
+			&emsp;
+			
+			<div style="width: 70%; height: 480px; display: inline-block; vertical-align: top;">
+			
+			<iframe	id="friendchat" class="box" srcdoc="" style="width: 100%; height: 440px; wordwrap: normal;""></iframe>
+			
+			<input type="textarea" id="chatbox" style="width: 100%; height: 30px; display: inline-block;" placeholder="Type your text here......." onkeypress="Javascript: if (event.keyCode == 13) sendmes();">
+			
+			</div>
 		</div>
 
 	</body>

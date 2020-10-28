@@ -17,3 +17,35 @@ const db = firebase.firestore();
 const settings = {};
 db.settings(settings);
 
+function login() {
+	pnum = document.getElementById("pnum").value;
+	pass = document.getElementById("pass").value;
+	
+	if (!pnum) {
+		console.log("Enter phone number");
+	}
+	else if (!pass) {
+		console.log("Enter password");
+	}
+	else {
+		var docRef = db.collection("messages").doc(pnum);
+		
+		docRef.get().then(function(doc) {
+			if (doc.exists) {
+				var r = doc.data();
+				if (pass === r[pass]) {
+					console.log("Password Match");
+				}
+				else {
+					console.log("Wrong password");
+				}
+			}
+			else {
+				// doc.data() will be undefined in this case
+				console.log("No such document!");
+			}
+		}).catch(function(error) {
+		console.log("Error getting document:", error);
+		});
+	}
+}

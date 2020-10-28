@@ -1,12 +1,14 @@
 function sendmes() {
 	var smes = document.getElementById("chatbox").value;
 	document.getElementById("chatbox").value = "";
-	htmlsmes = '<div style="text-align: right;">' + smes + '</div><br>';
-	chatpage = document.getElementById('friendchat');
-	chatpage.srcdoc += htmlsmes;
-	recmes();
+	if (smes) {
+		htmlsmes = '<div style="text-align: right;">' + smes + '</div><br>';
+		chatpage = document.getElementById('friendchat');
+		chatpage.srcdoc += htmlsmes;
+		//recmes();
+	}
+	setTimeout(scrolldown, 50);
 }
-
 
 function chatframe() {
 	//document.getElementById('friendchat').contentDocument.location.reload(true);
@@ -23,7 +25,7 @@ function recmes() {
 			var count = doc.data()[456][0];
 			var r = doc.data()[456];
 			if (count === 0) {
-				console.log("No new messages")
+				console.log("No new messages");
 			}
 			else {
 				for (var i = 1; i <= count; i++) {
@@ -40,4 +42,12 @@ function recmes() {
 	}).catch(function(error) {
 	console.log("Error getting document:", error);
 	});
+	setTimeout(scrolldown, 50);
 }
+
+function scrolldown() {
+	var innerFrame = document.getElementById("friendchat").contentWindow;
+	innerFrame.scroll(9999999, 9999999);
+}
+
+
