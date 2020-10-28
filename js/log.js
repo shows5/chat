@@ -35,6 +35,7 @@ function loginreg() {
 				var r = doc.data();
 				if (pass === r["pass"]) {
 					console.log("Password Match");
+					afterlog();
 				}
 				else {
 					console.log("Wrong password");
@@ -48,4 +49,12 @@ function loginreg() {
 		console.log("Error getting document:", error);
 		});
 	}
+}
+
+
+function afterlog() {
+	document.getElementById("chatwin").style.display = "inline-block";
+	//document.getElementById("logoutbut").style.display = "inline-block";
+	//document.getElementById("user").style.display = "inline-block";
+	document.getElementById("loginwin").style.display = "none";
 }
