@@ -26,7 +26,7 @@ function recmes() {
 				console.log("No new messages")
 			}
 			else {
-				for (var i = 1; i <= count; i--) {
+				for (var i = 1; i <= count; i++) {
 					console.log("New mess = " + r[i]);
 					htmlsmes = '<div style="text-align: left;">' + r[i] + '</div><br>';
 					chatpage.srcdoc += htmlsmes;
