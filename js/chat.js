@@ -2,8 +2,8 @@ function sendmes() {
 	var smes = document.getElementById("chatbox").value;
 	document.getElementById("chatbox").value = "";
 	htmlsmes = '<div style="text-align: right;">' + smes + '</div><br>';
-	var div = document.getElementById('friendchat');
-	div.srcdoc += htmlsmes;
+	chatpage = document.getElementById('friendchat');
+	chatpage.srcdoc += htmlsmes;
 	recmes();
 }
 
@@ -29,7 +29,7 @@ function recmes() {
 				for (var i = 1; i <= count; i--) {
 					console.log("New mess = " + r[i]);
 					htmlsmes = '<div style="text-align: left;">' + r[i] + '</div><br>';
-					div.srcdoc += htmlsmes;
+					chatpage.srcdoc += htmlsmes;
 				}
 			}
 		}
