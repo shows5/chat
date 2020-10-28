@@ -17,7 +17,7 @@ const db = firebase.firestore();
 const settings = {};
 db.settings(settings);
 
-function login() {
+function loginreg() {
 	pnum = document.getElementById("pnum").value;
 	pass = document.getElementById("pass").value;
 	
@@ -33,7 +33,7 @@ function login() {
 		docRef.get().then(function(doc) {
 			if (doc.exists) {
 				var r = doc.data();
-				if (pass === r[pass]) {
+				if (pass === r["pass"]) {
 					console.log("Password Match");
 				}
 				else {
